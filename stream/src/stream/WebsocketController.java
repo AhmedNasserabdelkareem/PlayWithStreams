@@ -2,13 +2,14 @@ package stream;
 
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.util.ArrayList;
 import java.util.LinkedList;
 
 public class WebsocketController {
 	private String Query;
-	private LinkedList<String> data;
+	private ArrayList<String> data;
 	
-	public LinkedList<String> getData() {
+	public ArrayList<String> getData() {
 		return data;
 	}
 
@@ -19,12 +20,12 @@ public class WebsocketController {
 	}
 
 	private LinkedList<String> start() {
-		data = new LinkedList<>();
+		data = new ArrayList<>();
    	 try {
          final WebsocketClientEndpoint clientEndPoint = new WebsocketClientEndpoint(new URI(Query));
          clientEndPoint.addMessageHandler(new WebsocketClientEndpoint.MessageHandler() {
              public void handleMessage(String message) {
-            	 data.push(message);
+            	 data.add(message);
                 // System.out.println(message);
              }
          });
