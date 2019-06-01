@@ -7,13 +7,13 @@ public class Trip {
 	public void setTaxi(String tripType) {
 		this.taxi = tripType;
 	}
-	public void setDriverId(int driverId) {
+	public void setDriverId(String driverId) {
 		DriverId = driverId;
 	}
-	public void setPickLocId(int pickLocId) {
+	public void setPickLocId(String pickLocId) {
 		this.pickLocId = pickLocId;
 	}
-	public void setDropLocId(int dropLocId) {
+	public void setDropLocId(String dropLocId) {
 		this.dropLocId = dropLocId;
 	}
 	public void setType(String type) {
@@ -25,9 +25,9 @@ public class Trip {
 	public void setDropDate(Date dropDate) {
 		this.dropDate = dropDate;
 	}
-	int DriverId;
-	int pickLocId;
-	int dropLocId;
+	String DriverId;
+	String pickLocId;
+	String dropLocId;
 	String Type;
 	Date pickDate;
 	Date dropDate;

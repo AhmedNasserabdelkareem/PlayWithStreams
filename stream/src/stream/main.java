@@ -1,20 +1,22 @@
 package stream;
 
-import java.text.ParseException;
-import java.util.ArrayList;
+import Gui.Dashboard;
+import javafx.application.Application;
+import javafx.stage.Stage;
 
 
-public class main {
-	final static String LOCAL_HOST = "ws://localhost:9000/ws";
-    public static void main(String[] args) {
-    	WebsocketController c = new WebsocketController(LOCAL_HOST); 
-    	//Visualizer v = new Visualizer (parser.trips);
-//    	printTrips(c.getData());
-  }
-     
-    static void printTrips(ArrayList<String> x){
-    	for(int i=0;i<x.size();i++){
-    		System.out.println(x.get(i));
-    	}
-    }
+public class main extends Application {
+
+	@Override
+	public void start(Stage primaryStage) {
+		/*
+		Application to pick your target Date
+		 */
+		Dashboard d = new Dashboard();
+		d.show(primaryStage);
+	}
+
+	public static void main(String[] args) {
+		launch(args);
+	}
 }
