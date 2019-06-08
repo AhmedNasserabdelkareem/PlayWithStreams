@@ -25,11 +25,17 @@ public class JsonParser {
 					t.setType(obj.getString(Titles.TYPE));
 					t.setDropDate(drop);
 					String dropLoc =obj.getString(Titles.DROPOFFLOCATIONID).replaceAll("\"", "");
+					if(dropLoc==""){
+						System.out.println("hahah");
+					}
 					t.setDropLocId(dropLoc);
 					t.setPickDate(pick);
 					String pickLock =obj.getString(Titles.PICKUPLOCATIONID).replaceAll("\"", "");
 					t.setPickLocId(pickLock);
 					t.setTaxi(obj.getString(Titles.TAXI));
+					long diff =  drop.getTime()- pick.getTime();
+					long diffMinutes = diff / (60 * 1000) % 60;
+					t.setTripdauration(diffMinutes);
 				} catch (ParseException | JSONException e) {
 					e.printStackTrace();
 				}

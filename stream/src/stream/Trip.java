@@ -31,6 +31,10 @@ public class Trip {
 	String Type;
 	Date pickDate;
 	Date dropDate;
+	long Tripdauration;
+	public void setTripdauration(long tripdauration) {
+		Tripdauration = tripdauration;
+	}
 	
 
 }

@@ -4,32 +4,16 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 
-import javafx.scene.chart.XYChart;
 import javax.swing.JTextField;
-import javax.swing.event.TableModelListener;
-import javax.swing.table.TableModel;
-import javax.swing.JTable;
 import java.awt.Color;
-import java.awt.Dimension;
-
-import javax.swing.table.DefaultTableModel;
 import javax.swing.JPanel;
-import javax.swing.JScrollPane;
-
-import java.awt.GridBagLayout;
-import java.awt.GridLayout;
-import java.awt.ScrollPane;
-
-import com.jgoodies.forms.layout.FormLayout;
-import com.jgoodies.forms.layout.ColumnSpec;
-import com.jgoodies.forms.layout.RowSpec;
 import javax.swing.border.LineBorder;
 import javax.swing.JLabel;
 import java.awt.Font;
-import javax.swing.SwingConstants;
 import javax.swing.JSeparator;
+import javax.swing.SwingConstants;
 
-public class jfree {
+public class DashBoard {
 
 	private JFrame frame;
 	private JLabel  [] labels  = new JLabel [31];
@@ -39,23 +23,14 @@ public class jfree {
 
 	int init =10;
 	int totalIndex=56;
-	private JTextField textField;
-	private JTextField textField_1;
-	private JTextField textField_2;
-	private JTextField textField_3;
-	private JTextField textField_4;
-	private JTextField textField_5;
-	private JTextField textField_6;
-	private JTextField textField_7;
-	private JTextField textField_8;
-	private JTextField txtMinutesPerTrip;
-	private JTextField txtNoDropoffTrips;
-	private JTextField MinGreen;
-	private JTextField MinYellow;
-	private JTextField MinFhv;
-	private JTextField NDFhv;
-	private JTextField NDYellow;
-	private JTextField NDGreen;
+	public static JTextField txtMinutesPerTrip;
+	public static JTextField txtNoDropoffTrips;
+	public static JTextField MinGreen;
+	public static JTextField MinYellow;
+	public static JTextField MinFhv;
+	public static JTextField NDFhv;
+	public static JTextField NDYellow;
+	public static JTextField NDGreen;
 	/**
 	 * Launch the application.
 	 */
@@ -63,7 +38,7 @@ public class jfree {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					jfree window = new jfree();
+					DashBoard window = new DashBoard();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -75,7 +50,7 @@ public class jfree {
 	/**
 	 * Create the application.
 	 */
-	public jfree() {
+	public DashBoard() {
 		initialize();
 	}
 
@@ -155,21 +130,24 @@ public class jfree {
 		txtNoDropoffTrips.setBounds(12, 13, 393, 47);
 		panel_4.add(txtNoDropoffTrips);
 		
-		NDFhv = new JTextField();
+		NDFhv = new JTextField("0");
+		NDFhv.setHorizontalAlignment(SwingConstants.CENTER);
 		NDFhv.setEditable(false);
 		NDFhv.setColumns(10);
 		NDFhv.setBackground(Color.ORANGE);
 		NDFhv.setBounds(12, 308, 393, 47);
 		panel_4.add(NDFhv);
 		
-		NDYellow = new JTextField();
+		NDYellow = new JTextField("0");
+		NDYellow.setHorizontalAlignment(SwingConstants.CENTER);
 		NDYellow.setEditable(false);
 		NDYellow.setColumns(10);
 		NDYellow.setBackground(Color.YELLOW);
 		NDYellow.setBounds(12, 228, 393, 47);
 		panel_4.add(NDYellow);
 		
-		NDGreen = new JTextField();
+		NDGreen = new JTextField("0");
+		NDGreen.setHorizontalAlignment(SwingConstants.CENTER);
 		NDGreen.setEditable(false);
 		NDGreen.setColumns(10);
 		NDGreen.setBackground(Color.GREEN);
@@ -190,21 +168,24 @@ public class jfree {
 		panel_3.add(txtMinutesPerTrip);
 		txtMinutesPerTrip.setColumns(10);
 		
-		MinGreen = new JTextField();
+		MinGreen = new JTextField("0");
+		MinGreen.setHorizontalAlignment(SwingConstants.CENTER);
 		MinGreen.setBackground(Color.GREEN);
 		MinGreen.setEditable(false);
 		MinGreen.setBounds(12, 152, 393, 47);
 		panel_3.add(MinGreen);
 		MinGreen.setColumns(10);
 		
-		MinYellow = new JTextField();
+		MinYellow = new JTextField("0");
+		MinYellow.setHorizontalAlignment(SwingConstants.CENTER);
 		MinYellow.setEditable(false);
 		MinYellow.setBackground(Color.YELLOW);
 		MinYellow.setColumns(10);
 		MinYellow.setBounds(12, 228, 393, 47);
 		panel_3.add(MinYellow);
 		
-		MinFhv = new JTextField();
+		MinFhv = new JTextField("0");
+		MinFhv.setHorizontalAlignment(SwingConstants.CENTER);
 		MinFhv.setEditable(false);
 		MinFhv.setBackground(Color.ORANGE);
 		MinFhv.setColumns(10);
@@ -219,21 +200,25 @@ public class jfree {
 			labels[i]= new JLabel(String.valueOf(i+1));
 			labels[i].setBounds(10, totalIndex, 65, 20);
 			panel.add(labels[i]);
+			labels[i].setHorizontalAlignment(SwingConstants.CENTER);
 			totalTrips[i] = new JTextField("0");
 			totalTrips[i].setColumns(10);
 			totalTrips[i].setBounds(76, totalIndex, 150, 20);
 			totalTrips[i].setEditable(false);
+			totalTrips[i].setHorizontalAlignment(SwingConstants.CENTER);
 			panel.add(totalTrips[i]);
 			
 			Vehicles[i] = new JTextField("0");
 			Vehicles[i].setColumns(10);
 			Vehicles[i].setEditable(false);
 			Vehicles[i].setBounds(25, totalIndex, 150, 20);
+			Vehicles[i].setHorizontalAlignment(SwingConstants.CENTER);
 			panel_1.add(Vehicles[i]);
 			MadBroc[i][0] = new JTextField("0");
 			MadBroc[i][0].setEditable(false);
 			MadBroc[i][0].setBackground(Color.YELLOW);
 			MadBroc[i][0].setBounds(10, totalIndex, 81, 22);
+			MadBroc[i][0].setHorizontalAlignment(SwingConstants.CENTER);
 			panel_2.add(MadBroc[i][0]);
 			MadBroc[i][0].setColumns(10);
 			
@@ -242,6 +227,7 @@ public class jfree {
 			MadBroc[i][1].setBackground(Color.GREEN);
 			MadBroc[i][1].setColumns(10);
 			MadBroc[i][1].setBounds(103, totalIndex, 81, 22);
+			MadBroc[i][1].setHorizontalAlignment(SwingConstants.CENTER);
 			panel_2.add(MadBroc[i][1]);
 			
 			MadBroc[i][2] = new JTextField("0");
@@ -249,6 +235,7 @@ public class jfree {
 			MadBroc[i][2].setBackground(Color.ORANGE);
 			MadBroc[i][2].setColumns(10);
 			MadBroc[i][2].setBounds(196, totalIndex, 81, 22);
+			MadBroc[i][2].setHorizontalAlignment(SwingConstants.CENTER);
 			panel_2.add(MadBroc[i][2]);
 			
 			totalIndex+=25;

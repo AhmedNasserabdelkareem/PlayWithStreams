@@ -1,22 +1,14 @@
 package stream;
 
-import Gui.Dashboard;
-import javafx.application.Application;
-import javafx.stage.Stage;
+import java.util.ArrayList;
 
-
-public class main extends Application {
-
-	@Override
-	public void start(Stage primaryStage) {
-		/*
-		Application to pick your target Date
-		 */
-		Dashboard d = new Dashboard();
-		d.show(primaryStage);
-	}
+public class main {
 
 	public static void main(String[] args) {
-		launch(args);
+		// TODO Auto-generated method stub
+	    LocationsReader r = new LocationsReader("taxi_zones_simple.csv");
+		WebsocketController c = new WebsocketController("ws://localhost:9000/ws",11, r.getLocations());
+
 	}
+
 }
