@@ -1,0 +1,5 @@
+Total number of received records : 80
+Total number of trips : 80
+Average trips per day the given month : 2.58
+Total number of distinct vehicles : 32
+Total number of trips picked up from Woodside,Queens :Green( 0 ), Yellow( 0 ), FHV( 0 )

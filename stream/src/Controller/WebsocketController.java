@@ -183,7 +183,7 @@ public class WebsocketController {
 
 	private void writeResults() {
 		try {
-			writer = new PrintWriter("..\\results\\result.txt", "UTF-8");
+			writer = new PrintWriter(System.getProperty("user.dir")+"\\results\\result.txt", "UTF-8");
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		} catch (UnsupportedEncodingException e) {
