@@ -18,6 +18,27 @@ in addition to Path of LocalHost:9000
 
 ![](/screenshots/Run.PNG)
 
+
+*Screenshots*
+
+![](/screenshots/img1.PNG)
+
+![](/screenshots/img2.PNG)
+
+![](/screenshots/img3.PNG)
+
+![](/screenshots/img4.PNG)
+
+![](/screenshots/img5.PNG)
+
+![](/screenshots/img6.PNG)
+
+![](/screenshots/img7.PNG)
+
+![](/screenshots/img8.PNG)
+
+
+
 *Results File*
 
 - Result file contains info about total trips. these results in result.txt file are after 2 minutes from running.
