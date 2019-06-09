@@ -1,4 +1,4 @@
-package stream;
+package Model;
 
 import java.util.Date;
 
@@ -8,6 +8,13 @@ import java.util.Date;
  */
 public class Trip {
 	String taxi;
+	String DriverId;
+	String pickLocId;
+	String dropLocId;
+	String Type;
+	Date pickDate;
+	Date dropDate;
+	Double Tripdauration;
 
 	public void setTaxi(String tripType) {
 		this.taxi = tripType;
@@ -37,13 +44,37 @@ public class Trip {
 		this.dropDate = dropDate;
 	}
 
-	String DriverId;
-	String pickLocId;
-	String dropLocId;
-	String Type;
-	Date pickDate;
-	Date dropDate;
-	Double Tripdauration;
+	public String getTaxi() {
+		return taxi;
+	}
+
+	public String getDriverId() {
+		return DriverId;
+	}
+
+	public String getPickLocId() {
+		return pickLocId;
+	}
+
+	public String getDropLocId() {
+		return dropLocId;
+	}
+
+	public String getType() {
+		return Type;
+	}
+
+	public Date getPickDate() {
+		return pickDate;
+	}
+
+	public Date getDropDate() {
+		return dropDate;
+	}
+
+	public Double getTripdauration() {
+		return Tripdauration;
+	}
 
 	public void setTripdauration(Double diffMinutes) {
 		Tripdauration = diffMinutes;

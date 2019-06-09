@@ -1,10 +1,13 @@
-package stream;
+package Utils;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import Model.Titles;
+import Model.Trip;
 
 /**
  * @author Ahmednasser

@@ -1,4 +1,7 @@
-package stream;
+package test;
+
+import Controller.WebsocketController;
+import Utils.LocationsReader;
 
 /**
  * @author Ahmednasser

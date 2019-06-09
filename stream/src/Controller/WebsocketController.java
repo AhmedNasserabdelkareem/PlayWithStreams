@@ -1,4 +1,4 @@
-package stream;
+package Controller;
 
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
@@ -13,7 +13,12 @@ import java.util.Set;
 
 import javax.websocket.server.ServerEndpoint;
 
-import Gui.DashBoard;
+import Model.Location;
+import Model.Titles;
+import Model.Trip;
+import Model.TripDauration;
+import Utils.JsonParser;
+import View.DashBoard;
 
 /**
  * @author Ahmednasser
@@ -77,10 +82,10 @@ public class WebsocketController {
 			clientEndPoint.addMessageHandler(new WebsocketClientEndpoint.MessageHandler() {
 				public void handleMessage(String message) {
 					Trip t = parser.setTripData(message);
-					if (t.DriverId.length() == 0 || t.taxi.length() == 0) {
+					if (t.getDriverId().length() == 0 || t.getTaxi().length() == 0) {
 						Failure_Count++;
 					} else {
-						int day = t.dropDate.getDate();
+						int day = t.getDropDate().getDate();
 						data[GlobalMonth][day].add(t);
 						UpdateGUI(t, day);
 						writeResults();
@@ -111,13 +116,13 @@ public class WebsocketController {
 	}
 
 	private void UpdateGUI(Trip t, int day) {
-		UniqueVehicles[day - 1].add(t.DriverId);
-		Vehicles.add(t.DriverId);
+		UniqueVehicles[day - 1].add(t.getDriverId());
+		Vehicles.add(t.getDriverId());
 		int tripGui = Integer.parseInt(DashBoard.totalTrips[day - 1].getText().toString()) + 1;
 		DashBoard.totalTrips[day - 1].setText(String.valueOf(tripGui));
 		DashBoard.Vehicles[day - 1].setText(String.valueOf(UniqueVehicles[day - 1].size()));
-		String type = t.taxi;
-		if (t.pickLocId == MADBROOCLocationID) {
+		String type = t.getTaxi();
+		if (t.getPickLocId() == MADBROOCLocationID) {
 			switch (type) {
 			case Titles.GREEN:
 				int greenMadBroc = Integer.parseInt(DashBoard.MadBroc[day - 1][1].getText().toString()) + 1;
@@ -131,7 +136,7 @@ public class WebsocketController {
 			}
 		}
 
-		if (t.dropLocId.length() == 0) {
+		if (t.getDropLocId().length() == 0) {
 			switch (type) {
 			case Titles.GREEN:
 				int NDGREEN = Integer.parseInt(DashBoard.NDGreen.getText().toString()) + 1;
@@ -148,19 +153,19 @@ public class WebsocketController {
 		switch (type) {
 		case Titles.GREEN:
 			tripTime[0].totalTrips++;
-			tripTime[0].totalTime += t.Tripdauration;
+			tripTime[0].totalTime += t.getTripdauration();
 			DashBoard.MinGreen.setText(String.format("%.2f", tripTime[0].totalTime / tripTime[0].totalTrips));
 		case Titles.YELLOW:
 			tripTime[1].totalTrips++;
-			tripTime[1].totalTime += t.Tripdauration;
+			tripTime[1].totalTime += t.getTripdauration();
 			DashBoard.MinYellow.setText(String.format("%.2f", tripTime[1].totalTime / tripTime[1].totalTrips));
 		case Titles.FHV:
 			tripTime[2].totalTrips++;
-			tripTime[2].totalTime += t.Tripdauration;
+			tripTime[2].totalTime += t.getTripdauration();
 			DashBoard.MinFhv.setText(String.format("%.2f", tripTime[2].totalTime / tripTime[2].totalTrips));
 
 		}
-		if (t.pickLocId == WoodsideQueensLocationID) {
+		if (t.getPickLocId() == WoodsideQueensLocationID) {
 			switch (type) {
 			case Titles.GREEN:
 				WoodsideTrips[0]++;

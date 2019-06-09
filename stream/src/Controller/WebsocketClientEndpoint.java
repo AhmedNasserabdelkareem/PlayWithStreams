@@ -1,4 +1,4 @@
-package stream;
+package Controller;
 
 import java.net.URI;
 import javax.websocket.*;
