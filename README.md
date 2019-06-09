@@ -14,6 +14,9 @@ in addition to Path of LocalHost:9000
 
 ![](stream/screenshots/main.PNG)
 
+- Note : You should include external jars to the Project.
+- You can find these jars in stream/src/Jars Directory
+
 - The Dashboard will start to track the data of everyday of the month.
 - Note : Orange bracket to indicate FHV Taxis.
 
