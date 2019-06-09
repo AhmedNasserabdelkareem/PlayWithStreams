@@ -1,5 +1,9 @@
 package stream;
 
+/**
+ * @author Ahmednasser
+ *
+ */
 public class Titles {
 	public final static String YELLOW = "yellow";
 	public final static String FHV = "fhv";
@@ -11,7 +15,5 @@ public class Titles {
 	public final static String PICKUPLOCATIONID = "pickupLocationId";
 	public final static String DROPOFFLOCATIONID = "dropOffLocationId";
 	public final static String TYPE = "type";
-	
-
 
 }
