@@ -24,4 +24,4 @@ in addition to Path of LocalHost:9000
 
 ![](/screenshots/result.PNG)
 
--Executable file ia added.
+- Executable file ia added.
