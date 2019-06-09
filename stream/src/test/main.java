@@ -13,7 +13,6 @@ public class main {
 		LocationsReader locationsReader = new LocationsReader(System.getProperty("user.dir")+"\\steam\\src\\dataset\\taxi_zones_simple.csv");
 		WebsocketController controller = new WebsocketController("ws://localhost:9000/ws", 11,
 				locationsReader.getLocations());
-
 	}
 
 }

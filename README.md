@@ -12,31 +12,31 @@ It is Required to implement Real-Time Dashboard.
 
 in addition to Path of LocalHost:9000
 
-![](/screenshots/main.PNG)
+![](stream/screenshots/main.PNG)
 
 - The Dashboard will start to track the data of everyday of the month.
 - Note : Orange bracket to indicate FHV Taxis.
 
-![](/screenshots/Run.PNG)
+![](stream/screenshots/Run.PNG)
 
 
 *Screenshots*
 
-![](/screenshots/img1.PNG)
+![](stream/screenshots/img1.PNG)
 
-![](/screenshots/img2.PNG)
+![](stream/screenshots/img2.PNG)
 
-![](/screenshots/img3.PNG)
+![](stream/screenshots/img3.PNG)
 
-![](/screenshots/img4.PNG)
+![](stream/screenshots/img4.PNG)
 
-![](/screenshots/img5.PNG)
+![](stream/screenshots/img5.PNG)
 
-![](/screenshots/img6.PNG)
+![](stream/screenshots/img6.PNG)
 
-![](/screenshots/img7.PNG)
+![](stream/screenshots/img7.PNG)
 
-![](/screenshots/img8.PNG)
+![](stream/screenshots/img8.PNG)
 
 
 
@@ -44,6 +44,6 @@ in addition to Path of LocalHost:9000
 
 - Result file contains info about total trips. these results in result.txt file are after 2 minutes from running.
 
-![](/screenshots/result.PNG)
+![](stream/screenshots/result.PNG)
 
 - Executable file ia added.
