@@ -10,7 +10,7 @@ import Utils.LocationsReader;
 public class main {
 
 	public static void main(String[] args) {
-		LocationsReader locationsReader = new LocationsReader(System.getProperty("user.dir")+"\\src\\dataset\\taxi_zones_simple.csv");
+		LocationsReader locationsReader = new LocationsReader(System.getProperty("user.dir")+"\\steam\\src\\dataset\\taxi_zones_simple.csv");
 		WebsocketController controller = new WebsocketController("ws://localhost:9000/ws", 11,
 				locationsReader.getLocations());
 
